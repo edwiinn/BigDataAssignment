@@ -9,11 +9,11 @@
 ### API Images :
 + Top Ratings <br>
 ![Alt text](../img/04_image_4.jpg)
-+ Top Ratings <br>
++ Movie Ratings <br>
 ![Alt text](../img/04_image_3.jpg)
-+ Top Ratings <br>
-![Alt text](../img/04_image_2.jpg)
-+ Top Ratings <br>
++ All User Ratings <br>
 ![Alt text](../img/04_image_1.jpg)
++ Add Ratings <br>
+![Alt text](../img/04_image_2.jpg)
 
 
