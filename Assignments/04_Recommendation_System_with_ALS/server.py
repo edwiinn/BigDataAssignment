@@ -30,8 +30,8 @@ def run_server(app):
     cherrypy.config.update({
         'engine.autoreload.on': True,
         'log.screen': True,
-        'server.socket_port': 5432,
-        'server.socket_host': '0.0.0.0'
+        'server.socket_port': 8091,
+        'server.socket_host': '127.0.0.1'
     })
  
     # Start the CherryPy WSGI web server
@@ -42,7 +42,7 @@ def run_server(app):
 if __name__ == "__main__":
     # Init spark context and load libraries
     sc = init_spark_context()
-    dataset_path = os.path.join('ml-latest')
+    dataset_path = os.path.join('ml-latest-small')
     app = create_app(sc, dataset_path)
  
     # start web server

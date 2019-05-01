@@ -28,20 +28,27 @@ def movie_ratings(user_id, movie_id):
     ratings = recommendation_engine.get_ratings_for_movie_ids(user_id, [movie_id])
     return json.dumps(ratings)
  
+@main.route("/<int:user_id>/ratings", methods = ["GET"])
+def user_ratings(user_id):
+    user_ratings = recommendation_engine.get_user_ratings(user_id)
+    return json.dumps(user_ratings)
  
 @main.route("/<int:user_id>/ratings", methods = ["POST"])
 def add_ratings(user_id):
     # get the ratings from the Flask POST request object
-    ratings_list = request.form.keys()[0].strip().split("\n")
-    ratings_list = map(lambda x: x.split(","), ratings_list)
+	ratings_list = list(request.form.keys())[0].strip().split("\n")
+	
+	ratings_list = map(lambda x: x.split(","), ratings_list)
     # create a list with the format required by the negine (user_id, movie_id, rating)
-    ratings = map(lambda x: (user_id, int(x[0]), float(x[1])), ratings_list)
+	ratings = map(lambda x: (user_id, int(x[0]), float(x[1])), ratings_list)
     # add them to the model using then engine API
-    recommendation_engine.add_ratings(ratings)
+	temp = list(ratings)
+	recommendation_engine.add_ratings(ratings)
+	return json.dumps(temp)
  
-    return json.dumps(ratings)
- 
- 
+
+
+
 def create_app(spark_context, dataset_path):
     global recommendation_engine 
  

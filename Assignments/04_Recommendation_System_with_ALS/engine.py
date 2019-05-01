@@ -86,6 +86,12 @@ class RecommendationEngine:
         ratings = self.__predict_ratings(user_unrated_movies_RDD).filter(lambda r: r[2]>=25).takeOrdered(movies_count, key=lambda x: -x[1])
 
         return ratings
+    
+    def get_user_ratings(self, user_id):
+        """Get all user ratings
+        """
+        user_ratings = self.ratings_RDD.filter(lambda x: x[0]==user_id).collect()
+        return user_ratings
 
     def __init__(self, sc, dataset_path):
         """Init the recommendation engine given a Spark context and a dataset path
@@ -117,10 +123,4 @@ class RecommendationEngine:
         self.iterations = 10
         self.regularization_parameter = 0.1
         self.__train_model() 
-
-
-# In[ ]:
-
-
-
 
