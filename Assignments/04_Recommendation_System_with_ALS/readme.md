@@ -6,4 +6,14 @@
 + `All User Ratings` : GET /__{user_id}__/ratings/
 + `Add Ratings` : POST /__{user_id}__/ratings/ *#raw data __{movie_id,rating}__*
 
+### API Images :
++ Top Ratings <br>
+![Alt text](../img/04_image_1.jpg)
++ Top Ratings <br>
+![Alt text](../img/04_image_1.jpg)
++ Top Ratings <br>
+![Alt text](../img/04_image_1.jpg)
++ Top Ratings <br>
+![Alt text](../img/04_image_1.jpg)
+
 
