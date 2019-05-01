@@ -1,7 +1,7 @@
 # Reccomendation System with ALS
 
-*engine.py* : Define the Reccomendation Engine and wrapping all spark related computation
-*app.py* : Flask web app that define RESTful API and its functionality
+*engine.py* : Define the Reccomendation Engine and wrapping all spark related computation <br>
+*app.py* : Flask web app that define RESTful API and its functionality <br> 
 *server.py* : Initialises a CherryPy web server for *app.py* and create Spark Context for *engine.py*
 
 ## REST API :
